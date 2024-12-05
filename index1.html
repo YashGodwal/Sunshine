@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Lines for Neetu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+            font-family: 'Dancing Script', cursive;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .line {
+            font-size: 2.5rem;
+            opacity: 0;
+            filter: brightness(0.5);
+            transition: opacity 2s ease, filter 2s ease;
+        }
+
+        .line.visible {
+            opacity: 1;
+            filter: brightness(1);
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <div class="line">"Neetu, you're the sunshine of my life."</div>
+        <div class="line">"Your hard work and determination inspire me every day."</div>
+        <div class="line">"I believe in you more than anything else in the world."</div>
+        <div class="line">"With you, everything feels possible."</div>
+    </div>
+
+    <script>
+        const lines = document.querySelectorAll('.line');
+        let delay = 0;
+
+        lines.forEach((line, index) => {
+            setTimeout(() => {
+                line.classList.add('visible');
+            }, delay);
+            delay += 3000; // 3 seconds delay for each line
+        });
+    </script>
+</body>
+</html>
